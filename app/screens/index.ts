@@ -1,0 +1,11 @@
+export * from "./error/error-boundary"
+// export other screens here
+export * from "./home/home-screen"
+export * from "./favourite/favourite-screen"
+export * from "./filter/filter-screen"
+export * from "./profile/profile-screen"
+export * from "./details/details-screen"
+export * from "./category-details/category-details-screen"
+export * from "./sign-in/sign-in-screen"
+export * from "./sign-up/sign-up-screen"
+export * from "./edit-profile/edit-profile-screen"

@@ -1,0 +1,6 @@
+require("../app/components/auto-image/auto-image.story")
+require("../app/components/form-row/form-row.story")
+require("../app/components/switch/switch.story")
+require("../app/components/wallpaper/wallpaper.story")
+require("../app/components/gradient-background/gradient-background.story")
+require("../app/components/icon/icon.story")
