@@ -11,17 +11,19 @@ import { useStores } from "../../models"
 // @ts-ignore
 
 function Header(props) {
-    return (<View style={styles.header}>
-          <CustomButton name={"align-left"} size={34} />
-          <View style={styles.title}>
-            <Icon name="film" style={styles.logo} />
-            <Text style={styles.titleText}>Movie</Text>
-          </View>
-          <View style={styles.searchAndCart}>
-            <CustomButtonOutLine name={"search-outline"} onPress={props.onPressSearch} />
-            <CustomButtonOutLine name={"cart-outline"} />
-          </View>
-        </View>);
+  return (
+    <View style={styles.header}>
+      <CustomButton name={"align-left"} size={34} />
+      <View style={styles.title}>
+        <Icon name="film" style={styles.logo} />
+        <Text style={styles.titleText}>Movie</Text>
+      </View>
+      <View style={styles.searchAndCart}>
+        <CustomButtonOutLine name={"search-outline"} onPress={props.onPressSearch} />
+        <CustomButtonOutLine name={"cart-outline"} />
+      </View>
+    </View>
+  )
 }
 
 // @ts-ignore
