@@ -9,6 +9,22 @@ import { CustomListMovies } from "../../components/custom-list-movies/custom-lis
 import { useStores } from "../../models"
 
 // @ts-ignore
+
+function Header(props) {
+    return (<View style={styles.header}>
+          <CustomButton name={"align-left"} size={34} />
+          <View style={styles.title}>
+            <Icon name="film" style={styles.logo} />
+            <Text style={styles.titleText}>Movie</Text>
+          </View>
+          <View style={styles.searchAndCart}>
+            <CustomButtonOutLine name={"search-outline"} onPress={props.onPressSearch} />
+            <CustomButtonOutLine name={"cart-outline"} />
+          </View>
+        </View>);
+}
+
+// @ts-ignore
 export const HomeScreen: FC<StackScreenProps<NavigatorParamList, "home">> = observer(
   function HomeScreen({ navigation }) {
     const rootStore = useStores()
@@ -27,17 +43,7 @@ export const HomeScreen: FC<StackScreenProps<NavigatorParamList, "home">> = obse
 
     return (
       <ScrollView style={styles.root}>
-        <View style={styles.header}>
-          <CustomButton name={"align-left"} size={34} />
-          <View style={styles.title}>
-            <Icon name="film" style={styles.logo} />
-            <Text style={styles.titleText}>Movie</Text>
-          </View>
-          <View style={styles.searchAndCart}>
-            <CustomButtonOutLine name={"search-outline"} onPress={onPressSearch} />
-            <CustomButtonOutLine name={"cart-outline"} />
-          </View>
-        </View>
+        <Header onPressSearch={onPressSearch}></Header>
         <MyCarousel data={rootStore.homeStore.home} />
         <CustomListCategory data={rootStore.genresStore.genres} onPress={onPressCategory} />
         <CustomListMovies
@@ -46,7 +52,7 @@ export const HomeScreen: FC<StackScreenProps<NavigatorParamList, "home">> = obse
           onPress={onPressDetails}
         />
         <CustomListMovies
-          text="Comming Soon"
+          text="Coming Soon"
           data={rootStore.homeStore.upComing}
           onPress={onPressDetails}
         />
