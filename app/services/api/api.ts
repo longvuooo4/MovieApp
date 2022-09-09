@@ -141,7 +141,6 @@ export class Api {
     try {
       const rawMovies = response.data.results
 
-      
       const convertedMovies: HomeSnapshotOut[] = rawMovies.map(convertMovies)
       return { kind: "ok", movies: convertedMovies }
     } catch (e) {
@@ -163,7 +162,6 @@ export class Api {
     try {
       const rawMovies = response.data.results
 
-      
       const convertedMovies: HomeSnapshotOut[] = rawMovies.map(convertMovies)
       return { kind: "ok", movies: convertedMovies }
     } catch (e) {
@@ -176,7 +174,7 @@ export class Api {
     const response: ApiResponse<any> = await this.apisauce.get(
       `/movie/${id}?api_key=${Config.TMDB_API_KEY}&append_to_response=credits`,
     )
-      
+
     if (!response.ok) {
       const problem = getGeneralApiProblem(response)
       if (problem) return problem
@@ -218,7 +216,6 @@ export class Api {
     try {
       const rawVideos = response.data.results
 
-      
       const convertedVideos: DetailSnapshotOut[] = rawVideos.map(convertVideos)
       return { kind: "ok", videos: convertedVideos }
     } catch (e) {
@@ -241,7 +238,7 @@ export class Api {
         id: raw.cast_id,
         name: raw.name,
         profile_path: raw.profile_path,
-        character: raw.character
+        character: raw.character,
       }
     }
     try {

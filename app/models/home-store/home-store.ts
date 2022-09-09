@@ -101,8 +101,8 @@ export const HomeStoreModel = types
     },
   })) // eslint-disable-line @typescript-eslint/no-unused-vars
   .actions((self) => ({
-    getCategory: flow(function* (id) {
-      const result: GetMoviesResult = yield self.environment.api.getCategory(id)
+    getCategory: flow(function* (id?: number) {
+      const result: GetMoviesResult = yield self.environment.api.getCategory(id??1)
 
       if (result.kind === "ok") {
         self.saveCategory(result.movies)

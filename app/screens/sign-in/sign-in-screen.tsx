@@ -21,7 +21,6 @@ export const SignInScreen: FC<StackScreenProps<NavigatorParamList, "signIn">> = 
       const unsubcribe = auth().onAuthStateChanged((user) => {
         if (user) {
           navigation.navigate("home")
-          console.log(user)
         }
       })
       return unsubcribe
@@ -60,7 +59,6 @@ export const SignInScreen: FC<StackScreenProps<NavigatorParamList, "signIn">> = 
         />
         <CustomLoginButton text="Sign In" onPress={onSignInPressed} />
         <CustomLoginButton text="Forgot password" type="TERTIARY" />
-        <CustomSocialButton />
         <CustomLoginButton
           text="Don't have an account? Create one"
           onPress={onSignUpPressed}
